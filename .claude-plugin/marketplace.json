@@ -1,0 +1,14 @@
+{
+  "name": "technical-writing-ko",
+  "owner": {
+    "name": "joshyeom",
+    "url": "https://github.com/joshyeom"
+  },
+  "plugins": [
+    {
+      "name": "technical-writing-ko",
+      "source": "./",
+      "description": "한글 기술 문서 작성·윤문. 은유 술어를 실제 동작으로 되돌리고 문체를 4단 우선순위로 정한다."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "technical-writing-ko",
+  "version": "0.2.0",
+  "description": "한글 기술 문서에서 AI가 쓴 티를 걷어낸다. 줄표·이중피동은 기계 스캔으로 전수 제거하고, 은유 술어와 번역투는 테크니컬 라이팅 원칙으로 판단해 실제 동작을 드러내는 문장으로 되돌린다.",
+  "author": {
+    "name": "joshyeom",
+    "url": "https://github.com/joshyeom"
+  },
+  "homepage": "https://github.com/joshyeom/technical-writing-ko",
+  "license": "MIT",
+  "keywords": ["korean", "technical-writing", "humanizer", "writing", "ko"]
+}
