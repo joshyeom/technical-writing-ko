@@ -198,6 +198,14 @@ Claude와 Codex는 영어권 글쓰기 교육을 학습했습니다. `Use strong
 
 ## 참고
 
+문장 원칙의 근거로 삼은 자료입니다.
+
+- [technical-writing.dev](https://technical-writing.dev) (Viva Republica, CC BY-NC-SA 4.0): 문장의 주체, 구체성, 자연스러운 한국어 표현 등 원칙 다섯 개의 바탕. 예문은 이 저장소에서 새로 작성했습니다.
+- [토스 테크 · AI 시대의 테크니컬 라이팅](https://toss.tech/article/technical-writing-5): 체크리스트 대신 원칙 기반으로 설계한 이유. "리뷰 코멘트를 체크리스트로 만들었더니 중요한 문제는 놓친 채 불필요한 코멘트만 만들어 냈다"는 실패 기록.
+- [테크니컬 라이팅을 잘 하려면 기대치를 낮춰야 합니다](https://news.hada.io/topic?id=24348) (blogbyash.com): 은유가 나오는 자리는 저자가 그 동작을 흐릿하게 아는 자리라는 논지. 추측 금지 규칙의 근거.
+
+비교 벤치마크에 쓴 도구입니다.
+
 - [daleseo/korean-skills@humanizer](https://skills.sh/daleseo/korean-skills/humanizer)
 - [nomadamas/k-skill@korean-humanizer](https://skills.sh/nomadamas/k-skill/korean-humanizer)
 
