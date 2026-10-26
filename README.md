@@ -13,6 +13,12 @@ AI가 쓴 한글 문장을 **읽을 수 있는 문서**로 만듭니다.
 /plugin install technical-writing-ko
 ```
 
+Claude Code 2.1.275 이상에서는 한 줄로도 설치할 수 있습니다.
+
+```
+/plugin install technical-writing-ko --marketplace joshyeom/technical-writing-ko
+```
+
 설치한 뒤 클로드 코드 출력 형식을 변경할 수 있습니다.
 
 ```
