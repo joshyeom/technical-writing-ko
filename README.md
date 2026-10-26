@@ -2,6 +2,8 @@
 
 AI가 쓴 한글 문장을 **읽을 수 있는 문서**로 만듭니다.
 
+**마켓플레이스**: [skills.sh/joshyeom/technical-writing-ko](https://skills.sh/joshyeom/technical-writing-ko/technical-writing-ko)
+
 ## 설치
 
 ### Claude Code
