@@ -39,7 +39,7 @@ prose() {
 
 # README가 예외로 적어 둔 건수. 이 수와 같으면 통과로 본다. 늘어나면
 # 새로 생긴 위반이라 종료 코드 1로 알린다.
-EXPECTED_GATE=3
+EXPECTED_GATE=2   # README가 예외로 적어 둔 건수
 
 echo "===== 1. 제거 대상 (scan.sh, 문서마다) ====="
 gate_total=0
