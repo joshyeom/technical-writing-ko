@@ -73,7 +73,7 @@ npx skills remove technical-writing-ko                 # 삭제
 /output-style
 ```
 
-목록에서 `Korean Plain`을 고르면 이번 세션에 바로 걸립니다.
+목록에서 `Korean Plain`을 고르면 이번 세션에 바로 적용됩니다.
 항상 켜두려면 `~/.claude/settings.json`에 넣습니다.
 
 ```json
