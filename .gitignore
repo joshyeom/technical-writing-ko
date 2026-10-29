@@ -1,3 +1,8 @@
 .DS_Store
 node_modules/
 evals/results/
+
+# 실제 문서로 하는 검증은 커밋하지 않는다 (evals/README.md 참고)
+evals/_local/
+*.local.md
+result.json
