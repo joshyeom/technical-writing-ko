@@ -2,7 +2,11 @@
 
 AI가 쓴 한글 산출물을 읽기 쉽게 다듬습니다. 파일 문서, 채팅 답변, HTML 본문, 화면 문구, 코드 주석의 한글이 대상입니다.
 
-**마켓플레이스**: [skills.sh/joshyeom/technical-writing-ko](https://skills.sh/joshyeom/technical-writing-ko/technical-writing-ko)
+**Codex와 Claude Code에서는 플러그인으로, 다른 에이전트에서는 스킬로 설치할 수 있습니다.**
+
+[Codex 설치](#codex-플러그인) | [Claude Code 설치](#claude-code-플러그인) | [스킬만 설치](#스킬만-설치) | [상세 설치 안내](INSTALL.md)
+
+**스킬 배포 페이지**: [skills.sh/joshyeom/technical-writing-ko](https://skills.sh/joshyeom/technical-writing-ko/technical-writing-ko)
 
 ## 왜 만들었나
 
@@ -30,13 +34,46 @@ Codex와 같이 쓰다 보니 Codex가 윤문을 더 정확하게 하는 것이 
 
 **기호는 전수 제거합니다.** 줄표, 꺽쇠, 중간점, 곡선따옴표, 이중피동은 판단이 필요 없습니다. 정규식으로 모두 찾아 고치고, 최종본을 내기 전에 다시 검사해 0건을 확인합니다.
 
-**분량을 줄입니다.** 채팅 답변은 결론을 첫 문장에 쓰고 핵심을 3개까지만 씁니다. 조사 과정과 검증 절차는 물을 때 답합니다.
+**채팅 답변을 짧게 씁니다.** Claude Code에서 `Korean Plain`을 켜면 결론을 첫 문장에 쓰고 핵심을 3개까지만 씁니다. 조사 과정과 검증 절차는 물을 때 답합니다. 스킬에는 분량 목표가 없습니다.
 
 **핵심이 보이게 고칩니다.** 행동하는 사람을 주어로 세우고, `상당히 개선됐다`를 근거에 있는 수치로 바꾸고, 은유 술어를 실제 동작으로 되돌립니다. 근거에 없는 내용은 지어내지 않고 `미해결`로 밝힙니다.
 
 ## 설치
 
-### Claude Code
+| 설치 방식 | 포함 기능 | 선택 기준 |
+|---|---|---|
+| Codex 플러그인 | 한글 작성 스킬과 검사 스크립트 | Codex 플러그인 목록에서 관리 |
+| Claude Code 플러그인 | 한글 작성 스킬, 검사 스크립트, `Korean Plain` 출력 문체 | 문서 작성과 모든 한글 채팅 답변에 적용 |
+| 스킬 단독 설치 | 한글 작성 스킬과 검사 스크립트 | Codex, Cursor 등에서 스킬로 사용 |
+
+### Codex 플러그인
+
+터미널에서 실행합니다. `codex plugin add`를 지원하는 Codex CLI가 필요합니다.
+
+```bash
+codex plugin marketplace add joshyeom/technical-writing-ko
+codex plugin add technical-writing-ko@technical-writing-ko
+```
+
+설치 후 Codex 앱을 다시 열고 새 대화를 시작합니다. 플러그인 표시 이름은 **Technical Writing KO**입니다.
+
+```text
+technical-writing-ko 스킬로 이 문서를 다듬어줘
+```
+
+설치 상태는 다음 명령으로 확인합니다. `installed`와 `enabled`가 모두 `true`이면 설치와 활성화가 완료된 상태입니다.
+
+```bash
+codex plugin list --marketplace technical-writing-ko --json
+```
+
+`npx skills add`로 설치한 스킬은 Codex 플러그인 목록에 등록되지 않습니다. 플러그인으로 관리하려면 위 명령으로 설치합니다.
+문서 작성 기능은 스킬 단독 설치와 같습니다. `Korean Plain` 출력 문체는 Claude Code 전용입니다.
+로컬 설치와 갱신 방법은 [상세 설치 안내](INSTALL.md#3-codex-플러그인으로-설치)에 있습니다.
+
+### Claude Code 플러그인
+
+Claude Code 대화에서 실행합니다.
 
 ```
 /plugin marketplace add joshyeom/technical-writing-ko
@@ -56,19 +93,6 @@ Claude Code 2.1.275 이상에서는 한 줄로도 설치할 수 있습니다.
 ```
 
 목록에서 `Korean Plain`을 고르면 이번 세션부터 채팅 답변에 적용됩니다. 되돌릴 때는 `Default`를 고릅니다.
-
-### Codex 플러그인
-
-`codex plugin add`를 지원하는 Codex CLI에서 실행합니다.
-
-```bash
-codex plugin marketplace add joshyeom/technical-writing-ko
-codex plugin add technical-writing-ko@technical-writing-ko
-```
-
-설치 후 Codex 앱을 다시 열고 새 대화를 시작합니다. 플러그인 이름은 `Technical Writing KO`입니다.
-문서 작성과 윤문에는 기존 스킬을 사용합니다. `Korean Plain` 출력 문체는 Claude Code 전용입니다.
-자세한 설치와 확인 방법은 [INSTALL.md](INSTALL.md#3-codex-플러그인으로-설치)에 있습니다.
 
 ### 스킬만 설치
 
@@ -228,12 +252,14 @@ const userId = req.params.id;            ->  그대로
 
 파일 문서는 본문만 정한 문체를 쓰고, 표와 불릿과 라벨은 개조식으로 분리합니다. 표 셀과 라벨은 명사로 끝냅니다. `검토했습니다`나 `검토함`이 아니라 `검토 완료`라고 씁니다. 다만 기존 문서가 개조식 끝맺음(`~함`, `~됨`)으로 쓰여 있으면 본문과 불릿과 표 셀 모두 그 끝맺음을 그대로 둡니다.
 
-## 두 경로
+## 스킬과 출력 문체
+
+플러그인은 스킬과 관련 파일을 함께 설치하는 패키지입니다. Codex 플러그인에서는 스킬을 사용하고, Claude Code 플러그인에서는 출력 문체도 선택할 수 있습니다.
 
 | | 스킬 | 출력 문체 |
 |---|---|---|
 | 켜는 법 | 자연어 요청으로 자동 호출 | `/output-style`에서 `Korean Plain` |
-| 대상 | 파일로 저장하는 한글 산출물 | 모든 한글 채팅 답변 |
+| 대상 | 한글 파일과 요청받은 채팅 답변 | 모든 한글 채팅 답변 |
 | 스크립트 | `scan.sh`를 실행 | 실행하지 않고 읽어서 적용 |
 | 분량 규칙 | 없음 | 결론 먼저, 핵심 3개까지 |
 | 읽는 시점 | 스킬 호출 때 1회 (세션 내 유지) | 세션 시작 1회 |
