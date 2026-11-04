@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "technical-writing-ko",
+  "version": "0.1.0",
+  "description": "한글 기술 문서를 쓰고 다듬습니다. 번역투와 추상적인 표현을 고치고 정규식 검사로 문체를 확인합니다.",
+  "author": {
+    "name": "joshyeom",
+    "url": "https://github.com/joshyeom"
+  },
+  "homepage": "https://github.com/joshyeom/technical-writing-ko",
+  "repository": "https://github.com/joshyeom/technical-writing-ko",
+  "license": "MIT",
+  "keywords": ["korean", "technical-writing", "humanizer", "writing", "ko"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Technical Writing KO",
+        "shortDescription": "한글 기술 문서 작성과 윤문",
+        "longDescription": "보고서, README, 화면 문구, 코드 주석의 한글을 다듬습니다. 번역투와 추상적인 표현을 고치고 정규식 검사로 문체를 확인합니다.",
+        "developerName": "joshyeom",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://github.com/joshyeom/technical-writing-ko",
+        "defaultPrompt": [
+          "이 문서의 번역투를 고쳐줘",
+          "이 README를 읽기 쉽게 다듬어줘",
+          "이 보고서에서 이해하기 어려운 표현을 검토해줘"
+        ],
+        "composerIcon": "./.claude-plugin/icon.png",
+        "logo": "./.claude-plugin/icon.png"
+      }
+    }
+  }
+}

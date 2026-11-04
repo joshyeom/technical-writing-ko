@@ -1,0 +1,20 @@
+{
+  "name": "technical-writing-ko",
+  "interface": {
+    "displayName": "Technical Writing KO"
+  },
+  "plugins": [
+    {
+      "name": "technical-writing-ko",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -57,9 +57,22 @@ Claude Code 2.1.275 이상에서는 한 줄로도 설치할 수 있습니다.
 
 목록에서 `Korean Plain`을 고르면 이번 세션부터 채팅 답변에 적용됩니다. 되돌릴 때는 `Default`를 고릅니다.
 
-### 그 외 에이전트
+### Codex 플러그인
 
-Codex, Cursor, OpenCode, Gemini CLI 등 77개 코딩 에이전트를 지원합니다. 출력 문체는 Claude Code 전용이라 스킬만 들어갑니다.
+`codex plugin add`를 지원하는 Codex CLI에서 실행합니다.
+
+```bash
+codex plugin marketplace add joshyeom/technical-writing-ko
+codex plugin add technical-writing-ko@technical-writing-ko
+```
+
+설치 후 Codex 앱을 다시 열고 새 대화를 시작합니다. 플러그인 이름은 `Technical Writing KO`입니다.
+문서 작성과 윤문에는 기존 스킬을 사용합니다. `Korean Plain` 출력 문체는 Claude Code 전용입니다.
+자세한 설치와 확인 방법은 [INSTALL.md](INSTALL.md#3-codex-플러그인으로-설치)에 있습니다.
+
+### 스킬만 설치
+
+Codex, Cursor, OpenCode, Gemini CLI 등 77개 코딩 에이전트를 지원합니다. 다음 명령은 스킬만 설치합니다.
 
 ```bash
 npx skills add joshyeom/technical-writing-ko

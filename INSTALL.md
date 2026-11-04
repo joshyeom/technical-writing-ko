@@ -1,7 +1,7 @@
 # 설치
 
-두 가지 경로가 있습니다. 스킬만 필요하면 첫 번째, Claude Code에서 문체 규칙까지
-항상 켜두고 싶으면 두 번째입니다.
+스킬만 설치하거나 Claude Code 또는 Codex 플러그인으로 설치할 수 있습니다.
+Claude Code에서 문체 규칙을 항상 켜두려면 플러그인을 설치한 뒤 `Korean Plain`을 선택합니다.
 
 ## 1. 스킬로 설치
 
@@ -82,7 +82,61 @@ npx skills remove technical-writing-ko                 # 삭제
 
 되돌릴 때는 `/output-style`에서 `Default`를 고릅니다.
 
-## 3. 출력 문체만 쓰고 싶을 때
+## 3. Codex 플러그인으로 설치
+
+`codex plugin add`를 지원하는 Codex CLI가 필요합니다. 다음 명령으로 지원 여부를 확인합니다.
+
+```bash
+codex plugin add --help
+```
+
+### 로컬 저장소에서 설치
+
+저장소를 내려받은 폴더에서 실행합니다.
+
+```bash
+codex plugin marketplace add .
+codex plugin add technical-writing-ko@technical-writing-ko
+codex plugin list --marketplace technical-writing-ko --json
+```
+
+설치 후 Codex 앱을 다시 열고 새 대화를 시작합니다.
+플러그인 목록에서 `Technical Writing KO`를 확인하고 문서 작성을 요청합니다.
+
+```text
+technical-writing-ko 스킬로 이 문서를 다듬어줘
+```
+
+`plugin.json`은 플러그인 정보와 표시 이름을 정의합니다.
+`.agents/plugins/marketplace.json`은 설치할 플러그인의 위치를 정의합니다.
+플러그인은 `skills/technical-writing-ko/`의 기존 스킬과 검사 스크립트를 사용합니다.
+스킬 단독 설치와 문서 작성 기능은 같으며, `Korean Plain` 출력 문체는 Claude Code 전용입니다.
+
+### GitHub에서 설치
+
+로컬 저장소 없이 설치할 수 있습니다.
+
+```bash
+codex plugin marketplace add joshyeom/technical-writing-ko
+codex plugin add technical-writing-ko@technical-writing-ko
+```
+
+이 방식은 해당 저장소를 플러그인 설치 출처로 등록합니다.
+공개 플러그인 디렉터리에 노출하려면 OpenAI에 별도로 제출해야 합니다.
+
+### 파일을 수정한 뒤
+
+로컬 저장소에서 수정했다면 같은 플러그인을 다시 설치하고 Codex 앱을 다시 엽니다.
+GitHub에서 설치했다면 마켓플레이스도 먼저 갱신합니다.
+
+```bash
+codex plugin marketplace upgrade technical-writing-ko
+codex plugin add technical-writing-ko@technical-writing-ko
+```
+
+형식과 배포 방식은 [OpenAI 플러그인 문서](https://developers.openai.com/plugins/build/plugins)를 따릅니다.
+
+## 4. 출력 문체만 쓰고 싶을 때
 
 플러그인 없이 파일 하나만 옮겨도 됩니다.
 
