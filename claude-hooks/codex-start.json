@@ -1,0 +1,6 @@
+{
+  "hookSpecificOutput": {
+    "hookEventName": "SubagentStart",
+    "additionalContext": "technical-writing-ko 플러그인 안내: Codex에 맡기는 일이 한글 산문을 쓰거나 고치는 일이면, Codex에 넘기는 프롬프트 끝에 아래 [한글 규칙] 문단을 그대로 붙인다. 한글 산문을 쓰지 않는 일이면 붙이지 않는다.\n\n[한글 규칙] 한글 산문은 technical-writing-ko 스킬이 있으면 그 규칙을 따른다. 줄표(—), 꺽쇠(「」), 중간점(·), 이중피동(되어지다), 곡선따옴표를 쓰지 않는다. 직접 인용한 원문은 고치지 않는다."
+  }
+}

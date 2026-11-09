@@ -14,5 +14,6 @@
     "humanizer",
     "writing",
     "ko"
-  ]
+  ],
+  "hooks": "./claude-hooks/hooks.json"
 }

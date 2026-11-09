@@ -1,0 +1,6 @@
+{
+  "hookSpecificOutput": {
+    "hookEventName": "SubagentStart",
+    "additionalContext": "technical-writing-ko 플러그인 안내: 한글 산문(문서, README, 보고서, 코드 주석, 커밋 메시지, 화면 문구)을 쓰거나 고치는 일이면 먼저 Skill 도구로 technical-writing-ko:technical-writing-ko 스킬을 불러 그 규칙을 따른다. 한글 산문을 파일에 저장했으면 스킬에 적힌 대로 scan.sh로 검사해 제거 대상을 0건으로 만든 뒤 끝낸다. 직접 인용한 원문은 고치지 않고, 그대로 둔 이유를 답에 적는다. 한글 산문을 쓰지 않는 일이면 이 안내는 무시한다."
+  }
+}
