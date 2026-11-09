@@ -1,0 +1,20 @@
+{
+  "description": "서브에이전트가 쓰는 한글에도 technical-writing-ko 규칙을 적용합니다",
+  "hooks": {
+    "SubagentStart": [
+      {
+        "matcher": "codex:codex-rescue",
+        "hooks": [{ "type": "command", "command": "cat \"${CLAUDE_PLUGIN_ROOT}/claude-hooks/codex-start.json\"" }]
+      },
+      {
+        "matcher": "^(?!codex:codex-rescue$).+",
+        "hooks": [{ "type": "command", "command": "cat \"${CLAUDE_PLUGIN_ROOT}/claude-hooks/subagent-start.json\"" }]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [{ "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/claude-hooks/subagent-stop.sh\"" }]
+      }
+    ]
+  }
+}
